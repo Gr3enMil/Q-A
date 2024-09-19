@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.questionsandanswers.fun
+
+# Sitemaps
+Sitemap: https://www.questionsandanswers.fun/sitemap.xml

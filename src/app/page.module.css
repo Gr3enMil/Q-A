@@ -26,6 +26,7 @@
 }
 
 .main h1 {
+  color: var(--headColor);
   align-self: center;
 }
 

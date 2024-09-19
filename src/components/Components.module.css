@@ -1,131 +1,207 @@
-.header {
-  display: flex;
-}
+/* error message */
+  .warn {
+    width: 100%;
+    color: #d81d1d;
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+/* header + footer styling */
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
 
-.headerDiv {
-  margin: 20px 0 0 20px;
-}
+  .headerDiv {
+    margin: 20px 0 0 20px;
+  }
 
-@media (max-width: 600px) {
- .header {
+  @media (max-width: 600px) {
+    .footer {
+      margin: 20px 0 10px 20px;
+    }
+  }
+
+  .searchBar {
+    width: 100%;
+    display: flex;
+    margin: 1.5rem;
+  }
+  .searchBar input {
+    width: 250px;
+    padding: 10px;
+    font-size: 20px;
+    font-style: italic;
+    border-radius: 4px;
+    border: 1px solid #dbdbdb;
+    
+  }
+  .results {
+    background-color: var(--tableColor);
+    border-radius: 15px;
+    box-shadow: 0 2px rgba(0, 0, 0, 0.2);
+    width: 340px;
+    top: 55px;
+    right: -3px;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+  @media (max-width: 500px) {
+    .results {
+      right: 15px;
+    }
+    .searchBar input{
+      width: 200px;
+    }
+  }
+  @media (max-width: 400px) {
+    .results {
+      right: 20px;
+    }
+  }
+
+/* formular styling */
+  .formContainer {
+    color: var(--textColor);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--tableColor);
+    text-align: center;
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.4);
+  }
+  @media screen and (max-width: 600px) {
+    .formContainer {
+      width: 80%;
+    }
+  }
+  .formContainer h2 {
+    margin-bottom: 20px;
+    color: var(--textColor);
+  }
+
+  .form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .first {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 1rem 0;
+    
+    font-size: larger;
+    font-weight: bolder;
+    color: var(--textColor);
+  }
+  .checkbox {
+    width: 10%;
+  }
+
+  .second {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  .labelInput {
+    width: 95%;
+    max-width: 400px;
+    padding: 10px;
+    font-size: 20px;
+    font-style: italic;
+    border-radius: 4px;
+    border: 1px solid #dbdbdb;
+    margin: 0 auto;
+  }
+
+  .button {
+    background: linear-gradient(135deg, #444444, #1a1a1a); 
+    color: var(--headColor); 
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Jemný vnější stín */
+    transition: background 0.3s ease;
+    width: 120px;
+    margin: 1rem auto;
+  }
+
+  .button:hover {
+    background: linear-gradient(135deg, #1a1a1a, #444444); 
+  }
+/* seznam otazek styling */
+  .questionList {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
   }
-
-  .footer {
-    margin: 20px 0 10px 20px;
+  .questionList h2 {
+    width: 100%;
+    margin-bottom: 10px;
+    color: var(--headColor);
+    text-align: center;
   }
-}
 
-.formContainer {
-  color: #c9c9c9;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 8px;
-  background-color: #5c5c5c;
-  text-align: center;
-  box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.4);
-}
-.formContainer h2 {
-  margin-bottom: 20px;
-  color: #8b8b8b;
-}
+  .question {
+    background-color: var(--tableColor);
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    margin: 20px;
+    border-radius: 8px;
+    width: 30%;
+    min-width: 300px;
+    max-height: 200px;
+    overflow: auto;
+    word-wrap: break-word;
+  }
 
-.form {
-  display: flex;
-  flex-wrap: wrap;
-}
+  .name {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--textColor);
+    margin-bottom: 10px;
+  }
 
+  .ask {
+    font-size: 20px;
+    color: var(--textColor);
+    margin-bottom: 40px;
+    font-style: oblique;
+  }
 
-.first {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin: 1rem 0 1rem 0;
-  
-  font-size: larger;
-  font-weight: bolder;
-  color: #8b8b8b;
-}
-.checkbox {
-  width: 10%;
-}
+  .answer {
+    font-size: 20px;
+    color: var(--answerColor);
+    margin-bottom: 10px;
+  }
 
-.second {
-  width: 100%;
-  margin-bottom: 10px;
-  font-size: 20px;
-  margin-top: 10px;
-}
-
-.labelInput {
-  width: 70%;
-  padding: 10px;
-  font-size: 20px;
-  font-style: italic;
-  border-radius: 4px;
-  border: 1px solid #bbbbbb;
-  margin: 0 auto;
-}
-
-.button {
-  background: linear-gradient(135deg, #555, #444); /* Gradientní button */
-  color: #fff; /* Bílý text */
-  border: none;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Jemný vnější stín */
-  transition: background 0.3s ease;
-  min-width: 60%;
-  margin: 2rem auto;
-}
-
-.button:hover {
-  background: linear-gradient(135deg, #666, #555); /* Zesvětlení gradientu při hoveru */
-}
-
-.questionList {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.questionList h2 {
-  width: 100%;
-  margin-bottom: 10px;
-  color: #8b8b8b;
-  text-align: center;
-}
-
-.question {
-  background-color: #5c5c5c;
-  box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.4);
-  padding: 10px;
-  margin: 10px;
-  border-radius: 8px;
-  width: 30%;
-  min-width: 300px;
-  max-height: 200px;
-  overflow: auto;
-  word-wrap: break-word;
-}
-
-.name {
-  font-size: 24px;
-  font-weight: bold;
-  color: #adadad;
-  margin-bottom: 10px;
-}
-
-.ask {
-  font-size: 20px;
-  color: #adadad;
-  margin-bottom: 30px;
-  font-style: oblique;
-}
-
-.answer {
-  font-size: 20px;
-  color: #e2abab;
-  margin-bottom: 10px;
-}
+  .voteSection {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0;
+  }
+  .voteSection button {
+    background-color: var(--buttonColor);
+    color: #008100;
+    border: none;
+    font-size: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  .voteSection button:hover {
+    color: #005c00;
+  }
+  .voteSection button:active {
+    color: #002500;
+  }
+  .voteSection span {
+    font-size: 20px;
+    color: #008100;
+  }

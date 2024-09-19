@@ -11,6 +11,7 @@ export default function QuestionForm() {
   const [email, setEmail] = useState('');
   const [isAnonymous, setIsAnonymous] = useState(false);
   const [question, setQuestion] = useState('');
+  const [warn, setWarn] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,9 +22,21 @@ export default function QuestionForm() {
     );
 
     if (isAnonymous) {
-      await sendAnonymousEmail(recaptchaToken);
+      if (!email || !question) {
+        setWarn(true);
+        return;
+      } else {
+        setWarn(false);
+        await sendAnonymousEmail(recaptchaToken);
+      }
     } else {
-      await submitQuestion(recaptchaToken);
+      if (!name || !question) {
+        setWarn(true);
+        return;
+      } else {
+        setWarn(false);      
+        await submitQuestion(recaptchaToken);
+      }
     }
 
     setName('');
@@ -111,6 +124,8 @@ export default function QuestionForm() {
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
         />
+
+        <p className={styles.warn}>{warn && 'Vyplňte všechna pole!'}</p>
 
         <button type="submit" className={styles.button}>Odeslat</button>
       </form>
