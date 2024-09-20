@@ -77,7 +77,7 @@ export default function QuestionForm() {
 
   return (
     <section className={styles.formContainer}>
-      <h2>Dotazový formulář:</h2>
+      <h2>Zeptej se na cokoliv:</h2>
       <form className={styles.form} onSubmit={handleSubmit}>
         <label className={styles.first}>
           <input
@@ -108,7 +108,7 @@ export default function QuestionForm() {
               className={styles.labelInput}
               id="email"
               type="email"
-              placeholder=""
+              placeholder="vlož e-mail pro odpověď na tvůj dotaz"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />

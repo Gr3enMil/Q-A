@@ -16,7 +16,7 @@ export default function SearchBar({ onSearch }) {
     <div className={styles.searchBar}>
       <input
         type="text"
-        placeholder="Vyhledat dotazy ..."
+        placeholder="Vyhledat v dotazech..."
         value={searchTerm}
         onChange={handleSearch}
         className={styles.searchInput}

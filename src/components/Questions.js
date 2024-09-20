@@ -1,7 +1,8 @@
 'use client';
 
 import styles from "./Components.module.css"
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faQuestionCircle, faReply, faTrashAlt, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 import { db } from '../../firebase'; // Firebase konfigurace
 import { collection, getDocs, doc, deleteDoc, updateDoc } from 'firebase/firestore';
@@ -77,12 +78,12 @@ export default function Questions({ question, initialVotes }) {
       {questions.map((q) => (
         <div key={q.id} className={styles.question}>
           <p className={styles.name}>
-          <i className="fas fa-question-circle"></i> <strong>{q.name}</strong> se ptá:</p>
+          <FontAwesomeIcon icon={faQuestionCircle} /> <strong>{q.name}</strong> se ptá:</p>
           <p className={styles.ask}>{q.question}</p>
 
           {q.answer && (
             <div className={styles.answerSection}>
-              <p className={styles.answer}><i className="fas fa-reply"></i> <strong>Odpověď:</strong></p>
+              <p className={styles.answer}><FontAwesomeIcon icon={faReply} /> <strong>Odpověď:</strong></p>
               <p className={styles.answer}> {q.answer}</p>
               
               {/* Zobrazení hlasování */}
@@ -96,10 +97,10 @@ export default function Questions({ question, initialVotes }) {
           {isLoggedIn && (
             <div>
               {/* Křížek pro mazání dotazů */}
-              <button onClick={() => handleDelete(q.id)}>❌ Smazat dotaz</button>
+              <button onClick={() => handleDelete(q.id)}><FontAwesomeIcon icon={faTrashAlt} /> Smazat dotaz</button>
 
               {/* Kolečko pro odpověď */}
-              <button onClick={() => setEditingId(q.id)}>⭕ Odpovědět</button>
+              <button onClick={() => setEditingId(q.id)}><FontAwesomeIcon icon={faReply} /> Odpovědět</button>
 
               {/* Zobrazení textarea pro odpověď */}
               {editingId === q.id && (

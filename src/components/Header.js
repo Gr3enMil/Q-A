@@ -1,5 +1,8 @@
 "use client";
 
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faQuestionCircle, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
 import styles from "./Components.module.css";
 import { useEffect, useState } from 'react';
@@ -50,6 +53,13 @@ export default function Header() {
           height={60}             // Výška obrázku
         />
       </div>
+      <nav className={styles.headerNav}>
+        <ul className={styles.list}>
+          <li><a href="/"><FontAwesomeIcon icon={faHome} /></a></li>
+          <li><a href="/faq"><FontAwesomeIcon icon={faQuestionCircle} /></a></li>
+          <li><a href="/about"><FontAwesomeIcon icon={faInfoCircle} /></a></li>
+        </ul>
+      </nav>
       <div>
         <SearchBar onSearch={handleSearch} />
         <QuestionsList questions={filteredQuestions} />

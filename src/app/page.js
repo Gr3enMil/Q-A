@@ -11,7 +11,7 @@ export default function Home() {
     <div className={styles.page}>
       <Header />
       <main className={styles.main}>
-        <h1>Zeptej se na cokoliv!</h1>
+        <h1>Anonymní poradna</h1>
         <QuestionForm />
         <Questions />
       </main>
