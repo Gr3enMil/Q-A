@@ -62,7 +62,7 @@ export default function Faq() {
       <div className={styles.faqDiv}>
         <h2 id="jak-zrusit-svuj-dotaz">8. Jak mohu zrušit svůj dotaz?</h2>
         <p>Pokud chcete svůj dotaz zrušit předtím, než na něj bude odpovězeno, 
-          můžete nás kontaktovat prostřednictvím e-mailu (přes "Anonymní dotaz"). Uveďte prosím detaily 
+          můžete nás kontaktovat prostřednictvím e-mailu (přes Anonymní dotaz). Uveďte prosím detaily 
           svého dotazu, abychom ho mohli identifikovat a odstranit.</p>
       </div>
     </div>
