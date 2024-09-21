@@ -26,8 +26,14 @@
 }
 
 .main h1 {
+  text-align: center;
   color: var(--headColor);
   align-self: center;
+}
+@media (max-width: 480px) {
+  .main h1 {
+    max-width: 50%;
+  }
 }
 
 .footer {

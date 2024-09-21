@@ -19,8 +19,8 @@
 }
 
 .icon {
-  min-width: 50px;
-  min-height: 50px; 
+  min-width: 40px;
+  min-height: 40px; 
   color: var(--headColor); 
   transition: color 0.4s ease;
   margin: 0 1rem; 

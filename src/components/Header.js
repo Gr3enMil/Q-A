@@ -2,7 +2,7 @@
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faQuestionCircle, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faQuestionCircle, faInfoCircle, faBurger } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
 import styles from "./Components.module.css";
 import { useEffect, useState } from 'react';
@@ -15,6 +15,7 @@ import { collection, getDocs } from 'firebase/firestore';
 export default function Header() {
   const [questions, setQuestions] = useState([]);
   const [filteredQuestions, setFilteredQuestions] = useState([]);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const fetchQuestions = async () => {
@@ -43,27 +44,34 @@ export default function Header() {
     }
   };
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.headerDiv}>
         <Image
-          src="/logo.png"  // Cesta k logu
+          src="/logo.png"  
           alt="Logo"
-          width={60}             // Šířka obrázku
-          height={60}             // Výška obrázku
+          width={60}             
+          height={60}             
         />
       </div>
-      <nav className={styles.headerNav}>
+      <nav className={menuOpen? styles.headerMenuOpen : styles.headerMenuClosed}>
         <ul className={styles.list}>
           <li><a href="/"><FontAwesomeIcon icon={faHome} /></a></li>
           <li><a href="/faq"><FontAwesomeIcon icon={faQuestionCircle} /></a></li>
           <li><a href="/about"><FontAwesomeIcon icon={faInfoCircle} /></a></li>
         </ul>
+        <div>
+          <SearchBar onSearch={handleSearch} />
+          <QuestionsList questions={filteredQuestions} />
+        </div>
       </nav>
-      <div>
-        <SearchBar onSearch={handleSearch} />
-        <QuestionsList questions={filteredQuestions} />
-      </div>
+      
+      
+      <FontAwesomeIcon icon={faBurger} className={menuOpen? styles.burgerOpen : styles.burger} onClick={toggleMenu}/>
     </header>
   );
 }

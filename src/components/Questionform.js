@@ -77,7 +77,7 @@ export default function QuestionForm() {
 
   return (
     <section className={styles.formContainer}>
-      <h2>Zeptej se na cokoliv:</h2>
+      <h2>Zeptej se na cokoliv</h2>
       <form className={styles.form} onSubmit={handleSubmit}>
         <label className={styles.first}>
           <input

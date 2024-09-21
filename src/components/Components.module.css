@@ -20,11 +20,6 @@
   .footer {
     margin: 2rem;
   }
-  @media (max-width: 600px) {
-    .footer {
-      margin: 20px 0 10px 20px;
-    }
-  }
 
   .searchBar {
     width: 100%;
@@ -45,7 +40,7 @@
     border-radius: 15px;
     box-shadow: 0 2px rgba(0, 0, 0, 0.2);
     width: 340px;
-    top: 55px;
+    top: 95px;
     right: -3px;
     display: flex;
     position: absolute;
@@ -53,29 +48,28 @@
     justify-content: center;
     margin: 1rem 0;
   }
-  @media (max-width: 500px) {
-    .results {
-      right: 15px;
-    }
-    .searchBar input{
-      width: 200px;
-    }
-  }
-  @media (max-width: 400px) {
-    .results {
-      right: 20px;
-    }
-  }
-
-  .headerNav {
+  
+  .headerMenuOpen, .headerMenuClosed {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 20px 20px 0 0;
+    margin: 20px 20px 0 20px;
   }
+
+  .burger, .burgerOpen {
+    transition: color 0.4s ease;
+    display: none;
+  }
+  .burger:hover {
+    color: #919191
+  }
+  .burgerOpen:hover {
+    color: var(--headColor);
+  }
+
   .list {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     list-style: none;
     width: 400px;
@@ -83,12 +77,93 @@
   .list a {
     text-decoration: none;
     color: var(--headColor);
-    font-size: 60px;
+    font-size: 40px;
     transition: color 0.4s ease;
   }
   .list a:hover {
     color: #919191
   }
+
+  @media (max-width: 890px) {
+    .headerMenuClosed {
+      display: none;
+    }
+    .headerMenuOpen {
+      position: absolute;
+      top: 70px;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .list {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 20px;
+    }
+    .burger , .burgerOpen {
+      display: block;
+      cursor: pointer;
+      font-size: 50px;
+      margin: 20px;
+      color: var(--headColor);
+    }
+    .burgerOpen {
+      color: #919191;
+    }
+    .searchBar {
+      position: absolute;
+      top: -90px;
+      right: 40px;
+      width: 250px;
+    }
+    .results {
+      top: -10%;
+      right: 65px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .searchBar {
+      right: 0;
+    }
+    .searchBar input{
+      width: 200px;
+    }
+    .results {
+      right: 75px;
+    }
+    .footer {
+      margin: 20px 0 10px 20px;
+    }
+    .burger, .burgerOpen {
+      margin: 20px 2px 0 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .searchBar {
+      right: -90px;
+      top: -80px;
+    }
+    .searchBar input {
+      width: 120px;
+    }
+    .results {
+      right: 0;
+      width: 300px;
+    }
+    .results div {
+      width: 220px;
+    }
+    .headerMenuOpen {
+      margin-top: 10px;
+    }
+    .list {
+      gap: 10px;
+    }
+  }
+
 
 /* formular styling */
   .formContainer {
@@ -101,9 +176,9 @@
     text-align: center;
     box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.4);
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 890px) {
     .formContainer {
-      width: 80%;
+      width: 75%;
     }
   }
   .formContainer h2 {
@@ -188,6 +263,11 @@
     max-height: 200px;
     overflow: auto;
     word-wrap: break-word;
+  }
+  @media (max-width: 480px) {
+    .question {
+      min-width: 260px;
+    }
   }
 
   .name {
