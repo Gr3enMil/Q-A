@@ -3,7 +3,7 @@
   --foreground: #171717;
   --textColor: #222222;
   --answerColor: #1c2972;
-  --headColor: #cacaca;
+  --headColor: #585858;
   --tableColor: #a5a5a5;
   
 }
@@ -12,6 +12,10 @@
   :root {
     --background: linear-gradient(115deg, #000000, #363636,#0000);
     --foreground: #ededed;
+    --textColor: #222222;
+    --answerColor: #1c2972;
+    --headColor: #cacaca;
+    --tableColor: #a5a5a5;
   }
 }
 
@@ -44,7 +48,7 @@ a {
   html {
     color-scheme: dark;
   }
-}
+} 
 
 ::-webkit-scrollbar {
   width: 15px; /* Nastavení šířky posuvníku */
