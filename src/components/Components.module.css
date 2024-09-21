@@ -228,7 +228,7 @@
 
   .button {
     background: linear-gradient(135deg, #444444, #1a1a1a); 
-    color: var(--headColor); 
+    color: var(--tableColor); 
     border: none;
     padding: 10px 15px;
     cursor: pointer;
