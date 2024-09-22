@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Poradna - dotazy - zdarma",
+  title: "Anonymní poradna - Odpovědi na vaše dotazy zdarma | Questions and Answers",
   description: "Zeptejte se na cokoliv. Odpovědi na vaše dotazy. Anonymní poradna zdarma.",
   robots: 'index, follow',
   

@@ -2,9 +2,10 @@
 
 import styles from "./Components.module.css"
 
-import { useState } from 'react';
+import { useState} from 'react';
 import { db } from '../../firebase'; // Firebase configuration
 import { collection, addDoc } from 'firebase/firestore';
+import { useRouter } from 'next/navigation';
 
 export default function QuestionForm() {
   const [name, setName] = useState('');
@@ -12,6 +13,8 @@ export default function QuestionForm() {
   const [isAnonymous, setIsAnonymous] = useState(false);
   const [question, setQuestion] = useState('');
   const [warn, setWarn] = useState(false);
+
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -43,6 +46,8 @@ export default function QuestionForm() {
     setEmail('');
     setQuestion('');
     setIsAnonymous(false);
+    
+    window.location.reload(); 
   };
 
   const sendAnonymousEmail = async (recaptchaToken) => {

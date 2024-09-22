@@ -46,8 +46,9 @@ export default function Questions({ question, initialVotes }) {
     await updateDoc(doc(db, 'questions', id), {
       answer: answer, // Uložíme odpověď
     });
-    setEditingId(null); // Zavřeme textarea
-    setAnswer(''); // Vyčistíme textarea
+    setEditingId(null); 
+    setAnswer(''); 
+    window.location.reload();
   };
 
   // Přidána funkce pro hlasování
