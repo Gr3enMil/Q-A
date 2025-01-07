@@ -1,10 +1,9 @@
 .page {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: space-between;
+  justify-content: flex-start;
   width: 100%;
-  min-height: 100vh;  
+  min-height: 100vh; 
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,6 +22,7 @@
   flex-direction: column;
   gap: 4rem;
   grid-row-start: 2;
+  margin-top: 2rem;
 }
 
 .main h1 {
