@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import Header from "../components/Header.js";
 import Footer from "../components/Footer.js";
-import Chat from "../components/Chat.js";
+
 
 
 import QuestionForm from '../components/Questionform.js';
@@ -16,7 +16,6 @@ export default function Home() {
         <h1>Anonymní poradna</h1>
         <QuestionForm />
         <Questions />
-        <Chat />
       </main>
       <Footer />
     </div>
